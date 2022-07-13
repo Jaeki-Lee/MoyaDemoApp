@@ -16,6 +16,9 @@
 		3146BF64287D6F5B007A98C7 /* MoyaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146BF63287D6F5B007A98C7 /* MoyaDemoAppTests.swift */; };
 		3146BF6E287D6F5B007A98C7 /* MoyaDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146BF6D287D6F5B007A98C7 /* MoyaDemoAppUITests.swift */; };
 		3146BF70287D6F5B007A98C7 /* MoyaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146BF6F287D6F5B007A98C7 /* MoyaDemoAppUITestsLaunchTests.swift */; };
+		31FA44F3287EC08600E8D78D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 31FA44F2287EC08600E8D78D /* Moya */; };
+		31FA44F5287EC08600E8D78D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 31FA44F4287EC08600E8D78D /* RxMoya */; };
+		31FA44F8287EC37000E8D78D /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA44F7287EC37000E8D78D /* NetworkLoggerPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		3146BF69287D6F5B007A98C7 /* MoyaDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoyaDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3146BF6D287D6F5B007A98C7 /* MoyaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaDemoAppUITests.swift; sourceTree = "<group>"; };
 		3146BF6F287D6F5B007A98C7 /* MoyaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		31FA44F7287EC37000E8D78D /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31FA44F5287EC08600E8D78D /* RxMoya in Frameworks */,
+				31FA44F3287EC08600E8D78D /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,7 @@
 		3146BF4B287D6F59007A98C7 /* MoyaDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				31FA44F6287EC34A00E8D78D /* Network */,
 				3146BF4C287D6F59007A98C7 /* AppDelegate.swift */,
 				3146BF4E287D6F59007A98C7 /* SceneDelegate.swift */,
 				3146BF50287D6F59007A98C7 /* ViewController.swift */,
@@ -127,6 +134,14 @@
 			path = MoyaDemoAppUITests;
 			sourceTree = "<group>";
 		};
+		31FA44F6287EC34A00E8D78D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				31FA44F7287EC37000E8D78D /* NetworkLoggerPlugin.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +158,10 @@
 			dependencies = (
 			);
 			name = MoyaDemoApp;
+			packageProductDependencies = (
+				31FA44F2287EC08600E8D78D /* Moya */,
+				31FA44F4287EC08600E8D78D /* RxMoya */,
+			);
 			productName = MoyaDemoApp;
 			productReference = 3146BF49287D6F59007A98C7 /* MoyaDemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +234,10 @@
 				Base,
 			);
 			mainGroup = 3146BF40287D6F59007A98C7;
+			packageReferences = (
+				31FA44F0287EC01A00E8D78D /* XCRemoteSwiftPackageReference "Moya" */,
+				31FA44F1287EC08600E8D78D /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 3146BF4A287D6F59007A98C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3146BF51287D6F59007A98C7 /* ViewController.swift in Sources */,
+				31FA44F8287EC37000E8D78D /* NetworkLoggerPlugin.swift in Sources */,
 				3146BF4D287D6F59007A98C7 /* AppDelegate.swift in Sources */,
 				3146BF4F287D6F59007A98C7 /* SceneDelegate.swift in Sources */,
 			);
@@ -602,6 +626,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		31FA44F0287EC01A00E8D78D /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		31FA44F1287EC08600E8D78D /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		31FA44F2287EC08600E8D78D /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31FA44F1287EC08600E8D78D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		31FA44F4287EC08600E8D78D /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31FA44F1287EC08600E8D78D /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3146BF41287D6F59007A98C7 /* Project object */;
 }
