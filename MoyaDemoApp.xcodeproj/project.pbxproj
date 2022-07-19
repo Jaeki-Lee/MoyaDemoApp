@@ -19,6 +19,15 @@
 		31FA44F3287EC08600E8D78D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 31FA44F2287EC08600E8D78D /* Moya */; };
 		31FA44F5287EC08600E8D78D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 31FA44F4287EC08600E8D78D /* RxMoya */; };
 		31FA44F8287EC37000E8D78D /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA44F7287EC37000E8D78D /* NetworkLoggerPlugin.swift */; };
+		AB55F023287F096200BBA8C3 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F022287F096200BBA8C3 /* Networkable.swift */; };
+		AB55F025287F0D5600BBA8C3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F024287F0D5600BBA8C3 /* NetworkError.swift */; };
+		AB55F027287F0F9D00BBA8C3 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F026287F0F9D00BBA8C3 /* ResponseData.swift */; };
+		AB55F029287F16F400BBA8C3 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F028287F16F400BBA8C3 /* BaseTargetType.swift */; };
+		AB55F02C287F195B00BBA8C3 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F02B287F195B00BBA8C3 /* Encodable.swift */; };
+		AB55F030287F1B3D00BBA8C3 /* ListUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F02F287F1B3D00BBA8C3 /* ListUserRequest.swift */; };
+		AB55F032287F1BBB00BBA8C3 /* ListUserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F031287F1BBB00BBA8C3 /* ListUserTarget.swift */; };
+		AB55F035287F1E1100BBA8C3 /* ListUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F034287F1E1100BBA8C3 /* ListUser.swift */; };
+		AB55F037287F1F7F00BBA8C3 /* ListUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55F036287F1F7F00BBA8C3 /* ListUserAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,15 @@
 		3146BF6D287D6F5B007A98C7 /* MoyaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaDemoAppUITests.swift; sourceTree = "<group>"; };
 		3146BF6F287D6F5B007A98C7 /* MoyaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		31FA44F7287EC37000E8D78D /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		AB55F022287F096200BBA8C3 /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
+		AB55F024287F0D5600BBA8C3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AB55F026287F0F9D00BBA8C3 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		AB55F028287F16F400BBA8C3 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		AB55F02B287F195B00BBA8C3 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		AB55F02F287F1B3D00BBA8C3 /* ListUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserRequest.swift; sourceTree = "<group>"; };
+		AB55F031287F1BBB00BBA8C3 /* ListUserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTarget.swift; sourceTree = "<group>"; };
+		AB55F034287F1E1100BBA8C3 /* ListUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUser.swift; sourceTree = "<group>"; };
+		AB55F036287F1F7F00BBA8C3 /* ListUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +123,8 @@
 		3146BF4B287D6F59007A98C7 /* MoyaDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				AB55F033287F1E0500BBA8C3 /* Domain */,
+				AB55F02D287F1AAB00BBA8C3 /* APIs */,
 				31FA44F6287EC34A00E8D78D /* Network */,
 				3146BF4C287D6F59007A98C7 /* AppDelegate.swift */,
 				3146BF4E287D6F59007A98C7 /* SceneDelegate.swift */,
@@ -137,9 +157,48 @@
 		31FA44F6287EC34A00E8D78D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AB55F02A287F194900BBA8C3 /* Utils */,
 				31FA44F7287EC37000E8D78D /* NetworkLoggerPlugin.swift */,
+				AB55F024287F0D5600BBA8C3 /* NetworkError.swift */,
+				AB55F022287F096200BBA8C3 /* Networkable.swift */,
+				AB55F026287F0F9D00BBA8C3 /* ResponseData.swift */,
+				AB55F028287F16F400BBA8C3 /* BaseTargetType.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		AB55F02A287F194900BBA8C3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AB55F02B287F195B00BBA8C3 /* Encodable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AB55F02D287F1AAB00BBA8C3 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				AB55F02E287F1AD900BBA8C3 /* ListUser */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		AB55F02E287F1AD900BBA8C3 /* ListUser */ = {
+			isa = PBXGroup;
+			children = (
+				AB55F02F287F1B3D00BBA8C3 /* ListUserRequest.swift */,
+				AB55F031287F1BBB00BBA8C3 /* ListUserTarget.swift */,
+				AB55F036287F1F7F00BBA8C3 /* ListUserAPI.swift */,
+			);
+			path = ListUser;
+			sourceTree = "<group>";
+		};
+		AB55F033287F1E0500BBA8C3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AB55F034287F1E1100BBA8C3 /* ListUser.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,8 +341,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3146BF51287D6F59007A98C7 /* ViewController.swift in Sources */,
+				AB55F02C287F195B00BBA8C3 /* Encodable.swift in Sources */,
+				AB55F027287F0F9D00BBA8C3 /* ResponseData.swift in Sources */,
 				31FA44F8287EC37000E8D78D /* NetworkLoggerPlugin.swift in Sources */,
+				AB55F035287F1E1100BBA8C3 /* ListUser.swift in Sources */,
+				AB55F029287F16F400BBA8C3 /* BaseTargetType.swift in Sources */,
 				3146BF4D287D6F59007A98C7 /* AppDelegate.swift in Sources */,
+				AB55F025287F0D5600BBA8C3 /* NetworkError.swift in Sources */,
+				AB55F023287F096200BBA8C3 /* Networkable.swift in Sources */,
+				AB55F037287F1F7F00BBA8C3 /* ListUserAPI.swift in Sources */,
+				AB55F032287F1BBB00BBA8C3 /* ListUserTarget.swift in Sources */,
+				AB55F030287F1B3D00BBA8C3 /* ListUserRequest.swift in Sources */,
 				3146BF4F287D6F59007A98C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

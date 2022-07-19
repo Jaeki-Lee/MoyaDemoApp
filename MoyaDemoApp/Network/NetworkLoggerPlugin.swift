@@ -37,15 +37,67 @@ struct NetworkLoggerPlugin: PluginType {
         
         /// HTTP Request Body
         if let body = httpRequest.httpBody, let bodyString = String(bytes: body, encoding: String.Encoding.utf8) {
-            httpLog.append("[HTTP Request End]")
+            httpLog.append(contentsOf: "\n\(bodyString)\n")
         }
+        httpLog.append("[HTTP Request End]")
         
         print(httpLog)
         
     }
     /// Called after a response has been received, but before the MoyaProvider has invoked its completion handler.
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
-        <#code#>
+        switch result {
+        case let .success(response):
+            onSuceed(response, target: target, isFromError: false)
+        case let .failure(error):
+            onFail(error, target: target)
+        }
+    }
+    
+    func onSuceed(_ response: Response, target: TargetType, isFromError: Bool) {
+        let request = response.request
+        let url = request?.url?.absoluteString ?? "nil"
+        let statusCode = response.statusCode
+        
+        /// HTTP Response Summary
+        var httpLog = """
+                      [HTTP Response]
+                      TARGET: \(target)
+                      URL: \(url)
+                      STATUS CODE: \(statusCode)\n
+                      """
+        /// HTTP Response Header
+        httpLog.append("HEADER: [\n")
+        response.response?.allHeaderFields.forEach{
+            httpLog.append("\t\($0): \($1)\n")
+        }
+        httpLog.append("]\n")
+        
+        /// HTTP Response Data
+        httpLog.append("RESPONSE DATA: \n")
+        if let responseString = String(bytes: response.data, encoding: String.Encoding.utf8) {
+            httpLog.append("\(responseString)\n")
+        }
+        httpLog.append("[HTTP Response End]")
+        
+        print(httpLog)
+    }
+    
+    func onFail(_ error: MoyaError, target: TargetType) {
+        if let response = error.response {
+            onSuceed(response, target: target, isFromError: true)
+            return
+        }
+        
+        var httpLog = """
+                      [HTTP Error]
+                      TARGET: \(target)
+                      ERRORCODE: \(error.errorCode)\n
+                      """
+        httpLog.append("MESSAGE: \(error.failureReason ?? error.errorDescription ?? "unknown error")\n")
+        httpLog.append("[HTTP Error End]")
+        
+        print(httpLog)
     }
     
     
