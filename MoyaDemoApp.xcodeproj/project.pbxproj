@@ -123,9 +123,8 @@
 		3146BF4B287D6F59007A98C7 /* MoyaDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				AB55F033287F1E0500BBA8C3 /* Domain */,
-				AB55F02D287F1AAB00BBA8C3 /* APIs */,
-				31FA44F6287EC34A00E8D78D /* Network */,
+				AB5ADA582886E3FA0060B082 /* Demo2 */,
+				AB5ADA572886E3E40060B082 /* Demo1 */,
 				3146BF4C287D6F59007A98C7 /* AppDelegate.swift */,
 				3146BF4E287D6F59007A98C7 /* SceneDelegate.swift */,
 				3146BF50287D6F59007A98C7 /* ViewController.swift */,
@@ -199,6 +198,23 @@
 				AB55F034287F1E1100BBA8C3 /* ListUser.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		AB5ADA572886E3E40060B082 /* Demo1 */ = {
+			isa = PBXGroup;
+			children = (
+				AB55F033287F1E0500BBA8C3 /* Domain */,
+				AB55F02D287F1AAB00BBA8C3 /* APIs */,
+				31FA44F6287EC34A00E8D78D /* Network */,
+			);
+			path = Demo1;
+			sourceTree = "<group>";
+		};
+		AB5ADA582886E3FA0060B082 /* Demo2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Demo2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
